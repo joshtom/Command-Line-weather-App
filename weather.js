@@ -6,7 +6,9 @@
 // let getWeatherId = Weather.weather[0].description;
 // let getWeatherTemp = Weather.main.temp;
 // console.log(getWeatherTemp+' Degree Celcius');
-
+const https = require('https');
+const http = require('http');
+const api = require('./api.json');
 
 function printError(error){
     console.log(error);
