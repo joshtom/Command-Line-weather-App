@@ -15,19 +15,20 @@ const api = require('./api.json');
 
     // }
     https.get(`https://api.openweathermap.org/data/2.5/weather?q=Ibadan&appid=${api.key}`, (res) =>{
-        console.log('statusCode:', res.statusCode);
-        console.log('headers', res.headers);
+        // console.log('statusCode:', res.statusCode);
+        // console.log('headers', res.headers);
 
        if(res.statusCode === 200) {
            let body = "";
         res.on('data', (data) => {
-            body =  process.stdout.write(data);
-            // body += data.toString();
+            // body =  process.stdout.write(data);
+            body += data.toString();
         });
         res.on('end', () =>{
             try{
                 const weatherInfo = JSON.parse(body);
-                console.log(weatherInfo.weather.id.length);
+                let getWeatherTemp = Weather.main.temp;
+                console.log(weatherInfo.weather[0]);
             } catch(error) {
                 console.log(error.message);
             }
