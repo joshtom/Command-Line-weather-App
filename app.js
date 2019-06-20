@@ -46,7 +46,9 @@ const api = require('./api.json');
     
     }
 
-    
+    console.log()
+
+
     
 // Get Weather Information By city name
 
