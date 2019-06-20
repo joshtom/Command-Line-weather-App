@@ -11,10 +11,11 @@ const api = require('./api.json');
     function printError(error){
         console.log(error);
     }
-    // function printMessage(){
-
-    // }
-    https.get(`https://api.openweathermap.org/data/2.5/weather?q=Ibadan&appid=${api.key}`, (res) =>{
+    function printMessage(cityName, getWeatherTemp){
+        console.log(`The weather Temperature for ${cityName} is ${getWeatherTemp} Degree Celcius`);
+    }
+    let cityName = "London";
+    https.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api.key}`, (res) =>{
         // console.log('statusCode:', res.statusCode);
         // console.log('headers', res.headers);
 
@@ -28,7 +29,8 @@ const api = require('./api.json');
             try{
                 const weatherInfo = JSON.parse(body);
                 let getWeatherTemp = weatherInfo.main.temp;
-                console.log(`${getWeatherTemp} Degree Celcius`);
+                // console.log(`${getWeatherTemp} Degree Celcius`);
+                printMessage(cityName, getWeatherTemp);
             } catch(error) {
                 console.log(error.message);
             }
