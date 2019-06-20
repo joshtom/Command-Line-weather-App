@@ -27,8 +27,8 @@ const api = require('./api.json');
         res.on('end', () =>{
             try{
                 const weatherInfo = JSON.parse(body);
-                let getWeatherTemp = Weather.main.temp;
-                console.log(getWeatherTemp);
+                let getWeatherTemp = weatherInfo.main.temp;
+                console.log(`${getWeatherTemp} Degree Celcius`);
             } catch(error) {
                 console.log(error.message);
             }
