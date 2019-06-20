@@ -7,11 +7,11 @@
 const https = require('https');
 const http = require('http');
 const api = require('./api.json');
-
+const gCityName = require('./weather');
    
 
     const cityNames = process.argv;
-    cityNames.forEach(cityNames.get);
+    cityNames.forEach(gCityName.get);
 
 
     

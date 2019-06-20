@@ -45,3 +45,5 @@ function get(cityName) {
     });
 
 }
+
+module.exports.get = get;
