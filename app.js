@@ -8,8 +8,9 @@
 const gCityName = require('./weather');
    
 
-    const cityNames = process.argv;
+    const cityNames = process.argv.slice(2)
     cityNames.forEach(gCityName.get);
+    console.log(cityNames);
 
 
     
